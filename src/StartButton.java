@@ -12,7 +12,7 @@ public class StartButton extends JButton implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        System.out.println("HAHA");
+        System.out.println("Game Start");
         new Pacman().Start();
         Frame.dispose();
     }
