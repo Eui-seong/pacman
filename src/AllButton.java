@@ -5,6 +5,7 @@ public class AllButton extends JPanel {
     MainPage Frame;
     private ImageIcon startimage = new ImageIcon("src/resources/images/startButton.PNG");
     private ImageIcon rankimage = new ImageIcon("src/resources/images/rankbutton.PNG");
+    private ImageIcon exitimage = new ImageIcon("src/resources/images/exitbutton.PNG");
     public AllButton(MainPage f){
         Frame=f;
         JButton startButton =new StartButton("Start", Frame);
@@ -18,9 +19,10 @@ public class AllButton extends JPanel {
         this.add(rankButton);
         rankButton.setIcon(rankimage);
         JButton exitButton =new ExitButton("Exit");
-        exitButton.setPreferredSize(new Dimension(100, 100));
+        exitButton.setPreferredSize(new Dimension(143, 104));
         exitButton.setBorderPainted(false);
         this.add(exitButton);
+        exitButton.setIcon(exitimage);
     }
     public void paintComponent(Graphics g) {
         g.setColor(Color.black);
