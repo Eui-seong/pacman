@@ -13,6 +13,7 @@ public class MainPage extends JFrame {
         cp.add(p1,BorderLayout.SOUTH);
         setTitle("Pacman");
         setSize(998, 800);
+        setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

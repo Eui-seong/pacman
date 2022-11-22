@@ -18,16 +18,8 @@ public class Pacman extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    private void startUI() {
-        Container cp = new Container();
-        JPanel p1 = new JPanel();
-        // 구현하기
-    }
-
-
     public void Start() {
         EventQueue.invokeLater(() -> {
-
             var ex = new Pacman();
             ex.setVisible(true);
         });
