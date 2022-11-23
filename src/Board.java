@@ -1,3 +1,11 @@
+/*
+ * SPDX-FileCopyrightText: © 2021, Jan Bodnar
+ * SPDX-License-Identifier: BSD-2-Clause
+ * Original Code
+ * https://github.com/janbodnar/Java-Pacman-Game
+ * modified by : Eui-seong, LeeJaeO, Woo-Su-Han
+ */
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,6 +24,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
 
 public class Board extends JPanel implements ActionListener {
 
