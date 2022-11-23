@@ -63,9 +63,6 @@ public class CharacterPage extends JFrame {
 
     }
 
-    public static void main(String[] args){
-        new CharacterPage();
-    }
 
     public void jp_set(JPanel jp, int x, int y, int w, int h){
         gbc.gridx = x; //행렬의 시작점 x좌표

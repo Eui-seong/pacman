@@ -11,6 +11,7 @@ public class CharacterButton extends JButton implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
+        new Pacman().Start();
 
     }
 }
