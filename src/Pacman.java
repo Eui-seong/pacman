@@ -11,15 +11,16 @@ import javax.swing.*;
 
 public class Pacman extends JFrame {
 
-    public Pacman() {
-
-        initUI();
+    private String color;
+    public Pacman(String c) {
+        color = c;
+        initUI(color);
 
     }
 
-    private void initUI() {
+    private void initUI(String c) {
 
-        add(new Board());
+        add(new Board(c));
         setTitle("Pacman");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(380, 420);
@@ -28,7 +29,7 @@ public class Pacman extends JFrame {
 
     public void Start() {
         EventQueue.invokeLater(() -> {
-            var ex = new Pacman();
+            var ex = new Pacman(color);
             ex.setVisible(true);
         });
     }

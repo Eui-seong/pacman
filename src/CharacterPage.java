@@ -38,12 +38,17 @@ public class CharacterPage extends JFrame {
             character_board[0][i].setBorder(new LineBorder(Color.white,3));
             if(i == 0){
                 character_board[0][i].add(new Panel_2(icon1));
+                character_board[0][i].setActionCommand("y");
             }
             else if (i == 1) {
                 character_board[0][i].add(new Panel_2(icon2));
+                character_board[0][i].setActionCommand("b");
             }
-            else
+            else{
                 character_board[0][i].add(new Panel_2(icon3));
+                character_board[0][i].setActionCommand("r");
+            }
+
             jp2.add(character_board[0][i]);
         }
 
@@ -64,12 +69,28 @@ public class CharacterPage extends JFrame {
     }
 
 
+
     public void jp_set(JPanel jp, int x, int y, int w, int h){
         gbc.gridx = x; //행렬의 시작점 x좌표
         gbc.gridy = y; //행렬의 시작점 y좌표
         gbc.gridwidth = w; //패널이 가로로 차지할 셀 비율
         gbc.gridheight = h; //패널이 세로로 차지할 셀의 크기
         gbl.setConstraints(jp,gbc);
+    }
+
+    public CharacterButton[][] getCharacter_board() {
+        return character_board;
+    }
+
+    public Icon icon1(){
+        return  icon1;
+    }
+
+    public Icon icon2(){
+        return  icon2;
+    }
+    public Icon icon3(){
+        return  icon3;
     }
     class Panel_1 extends JPanel{
         public void paintComponent(Graphics g){

@@ -87,9 +87,17 @@ public class Board extends JPanel implements ActionListener {
     private short[] screenData;
     private Timer timer;
 
-    public Board() {
+    public Board(String color) {
 
-        loadImages();
+        if(color.equals("b")){
+            loadImages_b();
+        }
+        else if(color.equals("r")){
+            loadImages_r();
+        }
+        else if(color.equals("y")){
+            loadImages_y();
+        }
         initVariables();
         initBoard();
     }
@@ -378,7 +386,7 @@ public class Board extends JPanel implements ActionListener {
                 g2d.drawImage(pacman4up, pacman_x + 1, pacman_y + 1, this);
                 break;
             default:
-                g2d.drawImage(pacman1, pacman_x + 1, pacman_y + 1, this);
+                g2d.drawImage(pacman2up, pacman_x + 1, pacman_y + 1, this);
                 break;
         }
     }
@@ -396,7 +404,7 @@ public class Board extends JPanel implements ActionListener {
                 g2d.drawImage(pacman4down, pacman_x + 1, pacman_y + 1, this);
                 break;
             default:
-                g2d.drawImage(pacman1, pacman_x + 1, pacman_y + 1, this);
+                g2d.drawImage(pacman2down, pacman_x + 1, pacman_y + 1, this);
                 break;
         }
     }
@@ -414,7 +422,7 @@ public class Board extends JPanel implements ActionListener {
                 g2d.drawImage(pacman4left, pacman_x + 1, pacman_y + 1, this);
                 break;
             default:
-                g2d.drawImage(pacman1, pacman_x + 1, pacman_y + 1, this);
+                g2d.drawImage(pacman2left, pacman_x + 1, pacman_y + 1, this);
                 break;
         }
     }
@@ -432,7 +440,7 @@ public class Board extends JPanel implements ActionListener {
                 g2d.drawImage(pacman4right, pacman_x + 1, pacman_y + 1, this);
                 break;
             default:
-                g2d.drawImage(pacman1, pacman_x + 1, pacman_y + 1, this);
+                g2d.drawImage(pacman2right, pacman_x + 1, pacman_y + 1, this);
                 break;
         }
     }
@@ -528,21 +536,55 @@ public class Board extends JPanel implements ActionListener {
         dying = false;
     }
 
-    private void loadImages() {
+    private void loadImages_y() {
         ghost = new ImageIcon("src/resources/images/ghost.png").getImage();
         pacman1 = new ImageIcon("src/resources/images/pacman.png").getImage();
-        pacman2up = new ImageIcon("src/resources/images/up1.png").getImage();
-        pacman3up = new ImageIcon("src/resources/images/up2.png").getImage();
-        pacman4up = new ImageIcon("src/resources/images/up3.png").getImage();
-        pacman2down = new ImageIcon("src/resources/images/down1.png").getImage();
-        pacman3down = new ImageIcon("src/resources/images/down2.png").getImage();
-        pacman4down = new ImageIcon("src/resources/images/down3.png").getImage();
-        pacman2left = new ImageIcon("src/resources/images/left1.png").getImage();
-        pacman3left = new ImageIcon("src/resources/images/left2.png").getImage();
-        pacman4left = new ImageIcon("src/resources/images/left3.png").getImage();
-        pacman2right = new ImageIcon("src/resources/images/right1.png").getImage();
-        pacman3right = new ImageIcon("src/resources/images/right2.png").getImage();
-        pacman4right = new ImageIcon("src/resources/images/right3.png").getImage();
+        pacman2up = new ImageIcon("src/resources/images/up1_y.png").getImage();
+        pacman3up = new ImageIcon("src/resources/images/up2_y.png").getImage();
+        pacman4up = new ImageIcon("src/resources/images/up3_y.png").getImage();
+        pacman2down = new ImageIcon("src/resources/images/down1_y.png").getImage();
+        pacman3down = new ImageIcon("src/resources/images/down2_y.png").getImage();
+        pacman4down = new ImageIcon("src/resources/images/down3_y.png").getImage();
+        pacman2left = new ImageIcon("src/resources/images/left1_y.png").getImage();
+        pacman3left = new ImageIcon("src/resources/images/left2_y.png").getImage();
+        pacman4left = new ImageIcon("src/resources/images/left3_y.png").getImage();
+        pacman2right = new ImageIcon("src/resources/images/right1_y.png").getImage();
+        pacman3right = new ImageIcon("src/resources/images/right2_y.png").getImage();
+        pacman4right = new ImageIcon("src/resources/images/right3_y.png").getImage();
+
+    }
+    private void loadImages_b() {
+        ghost = new ImageIcon("src/resources/images/ghost.png").getImage();
+        pacman1 = new ImageIcon("src/resources/images/pacman.png").getImage();
+        pacman2up = new ImageIcon("src/resources/images/up1_b.png").getImage();
+        pacman3up = new ImageIcon("src/resources/images/up2_b.png").getImage();
+        pacman4up = new ImageIcon("src/resources/images/up3_b.png").getImage();
+        pacman2down = new ImageIcon("src/resources/images/down1_b.png").getImage();
+        pacman3down = new ImageIcon("src/resources/images/down2_b.png").getImage();
+        pacman4down = new ImageIcon("src/resources/images/down3_b.png").getImage();
+        pacman2left = new ImageIcon("src/resources/images/left1_b.png").getImage();
+        pacman3left = new ImageIcon("src/resources/images/left2_b.png").getImage();
+        pacman4left = new ImageIcon("src/resources/images/left3_b.png").getImage();
+        pacman2right = new ImageIcon("src/resources/images/right1_b.png").getImage();
+        pacman3right = new ImageIcon("src/resources/images/right2_b.png").getImage();
+        pacman4right = new ImageIcon("src/resources/images/right3_b.png").getImage();
+
+    }
+    private void loadImages_r() {
+        ghost = new ImageIcon("src/resources/images/ghost.png").getImage();
+        pacman1 = new ImageIcon("src/resources/images/pacman.png").getImage();
+        pacman2up = new ImageIcon("src/resources/images/up1_r.png").getImage();
+        pacman3up = new ImageIcon("src/resources/images/up2_r.png").getImage();
+        pacman4up = new ImageIcon("src/resources/images/up3_r.png").getImage();
+        pacman2down = new ImageIcon("src/resources/images/down1_r.png").getImage();
+        pacman3down = new ImageIcon("src/resources/images/down2_r.png").getImage();
+        pacman4down = new ImageIcon("src/resources/images/down3_r.png").getImage();
+        pacman2left = new ImageIcon("src/resources/images/left1_r.png").getImage();
+        pacman3left = new ImageIcon("src/resources/images/left2_r.png").getImage();
+        pacman4left = new ImageIcon("src/resources/images/left3_r.png").getImage();
+        pacman2right = new ImageIcon("src/resources/images/right1_r.png").getImage();
+        pacman3right = new ImageIcon("src/resources/images/right2_r.png").getImage();
+        pacman4right = new ImageIcon("src/resources/images/right3_r.png").getImage();
 
     }
 
