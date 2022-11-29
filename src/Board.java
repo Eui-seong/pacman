@@ -21,12 +21,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import javax.swing.Timer;
+import javax.swing.*;
 
 
 public class Board extends JPanel implements ActionListener {
+
+    private String[][] rankArr = new String[5][3];
 
     private Dimension d;
     private final Font smallFont = new Font("Helvetica", Font.BOLD, 14);
@@ -171,7 +171,7 @@ public class Board extends JPanel implements ActionListener {
         g2d.setColor(Color.white);
         g2d.drawRect(50, SCREEN_SIZE / 2 - 30, SCREEN_SIZE - 100, 50);
 
-        String s = "Press s to start.";
+        String s = "Press s to start or m to main page.";
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics metr = this.getFontMetrics(small);
 
@@ -230,6 +230,7 @@ public class Board extends JPanel implements ActionListener {
         pacsLeft--;
 
         if (pacsLeft == 0) {
+            JOptionPane.showMessageDialog(null, "Game Over");
             inGame = false;
         }
 
@@ -485,7 +486,6 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void initGame() {
-
         pacsLeft = 3;
         score = 0;
         initLevel();

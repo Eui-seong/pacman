@@ -13,7 +13,7 @@ public class AllButton extends JPanel {
         startButton.setBorderPainted(false);
         this.add(startButton);
         startButton.setIcon(startimage);
-        JButton rankButton =new RankButton("Rank");
+        JButton rankButton =new RankButton("Rank", Frame);
         rankButton.setPreferredSize(new Dimension(216, 90));
         rankButton.setBorderPainted(false);
         this.add(rankButton);
