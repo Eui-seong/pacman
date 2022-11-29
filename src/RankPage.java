@@ -50,7 +50,7 @@ public class RankPage extends JFrame {
         JButton goBackButton = new GoBackButton(this);
         goBackButton.setBackground(Color.WHITE);
         goBackButton.setFont(new Font("Helvetica", Font.BOLD, 17));
-        goBackButton.setPreferredSize(new Dimension(100, 40));
+        goBackButton.setPreferredSize(new Dimension(110, 40));
         p2.setBorder(BorderFactory.createEmptyBorder(10 , 0, 10 , 0));
         p2.add(goBackButton);
         cp.add(label, BorderLayout.NORTH);
