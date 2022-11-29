@@ -25,9 +25,6 @@ import javax.swing.*;
 
 
 public class Board extends JPanel implements ActionListener {
-
-    private String[][] rankArr = new String[5][3];
-
     private Dimension d;
     private final Font smallFont = new Font("Helvetica", Font.BOLD, 14);
 

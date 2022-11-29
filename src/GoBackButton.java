@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RankStartButton extends JButton implements ActionListener {
+public class GoBackButton extends JButton implements ActionListener {
 
     private RankPage rankPage;
 
-    public RankStartButton(RankPage r) {
-        super(new ImageIcon("src/resources/images/rankStartButton.PNG"));
+    public GoBackButton(RankPage r) {
+        super("Go Back");
         rankPage =  r;
         addActionListener(this);
     }
@@ -15,7 +15,7 @@ public class RankStartButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new CharacterPage();
+        new MainPage();
         rankPage.dispose();
     }
 }
