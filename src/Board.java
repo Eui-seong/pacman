@@ -22,7 +22,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-
+import java.awt.*;
 import javax.swing.*;
 
 
@@ -86,7 +86,9 @@ public class Board extends JPanel implements ActionListener {
     private short[] screenData;
     private Timer timer;
 
-    public Board(String color) {
+    private JFrame frame;
+    public Board(String color,JFrame F) {
+        frame=F;
 
         if(color.equals("b")){
             loadImages_b();
@@ -661,6 +663,7 @@ public class Board extends JPanel implements ActionListener {
                     initGame();
                 }
                 else if (key == 'm' || key == 'M') {
+                    frame.dispose();
                     new MainPage();
                 }
             }

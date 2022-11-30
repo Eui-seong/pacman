@@ -19,7 +19,7 @@ public class Pacman extends JFrame {
     }
 
     private void initUI(String c) {
-        add(new Board(c));
+        add(new Board(c,this));
         setTitle("Pacman");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(380, 420);
