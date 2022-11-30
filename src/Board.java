@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 import javax.swing.*;
 
@@ -227,7 +229,16 @@ public class Board extends JPanel implements ActionListener {
         pacsLeft--;
 
         if (pacsLeft == 0) {
-            JOptionPane.showMessageDialog(null, "Game Over");
+            String name = JOptionPane.showInputDialog("Game Over!\nInput your name");
+            try {
+                FileWriter writer = new FileWriter("rank.csv", true);
+                PrintWriter outfile = new PrintWriter(writer);
+                outfile.println(score + "," + name);
+                outfile.close();
+            }
+            catch (Exception e) {
+                System.out.println("Error!");
+            }
             inGame = false;
         }
 
@@ -648,6 +659,9 @@ public class Board extends JPanel implements ActionListener {
                 if (key == 's' || key == 'S') {
                     inGame = true;
                     initGame();
+                }
+                else if (key == 'm' || key == 'M') {
+                    new MainPage();
                 }
             }
         }
