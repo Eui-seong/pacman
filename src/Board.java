@@ -231,16 +231,8 @@ public class Board extends JPanel implements ActionListener {
         pacsLeft--;
 
         if (pacsLeft == 0) {
-            String name = JOptionPane.showInputDialog("Game Over!\nInput your name");
-            try {
-                FileWriter writer = new FileWriter("rank.csv", true);
-                PrintWriter outfile = new PrintWriter(writer);
-                outfile.println(score + "," + name);
-                outfile.close();
-            }
-            catch (Exception e) {
-                System.out.println("Error!");
-            }
+
+            new inputpage(score);
             inGame = false;
         }
 
