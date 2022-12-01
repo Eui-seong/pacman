@@ -33,7 +33,7 @@ public class inputpage extends JFrame {
         add(okay_button);
 
         setTitle("Pacman");
-        setSize(300, 300);
+        setSize(300, 250);
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
