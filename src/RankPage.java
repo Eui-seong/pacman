@@ -25,6 +25,10 @@ public class RankPage extends JFrame {
         p1.setBackground(Color.BLACK);
         p1.setLayout(new GridLayout(6, 3));
         p1.setBorder(new LineBorder(Color.WHITE));
+        for (int i = 0; i < 5; i++) {
+            getTop5[i][0] = "0";
+            getTop5[i][1] = "-";
+        }
         setGetTop5();
         JLabel hue1 = new JLabel("      Rank");
         JLabel hue2 = new JLabel("      Score");
@@ -122,10 +126,6 @@ public class RankPage extends JFrame {
 
     public void setGetTop5() {
         // 배열 초기화
-        for (int i = 0; i < 5; i++) {
-            getTop5[i][0] = "0";
-            getTop5[i][1] = "-";
-        }
         try {
             BufferedReader infile = new BufferedReader(new FileReader("./rank.csv"));
             if (infile.ready()) {
@@ -151,7 +151,7 @@ public class RankPage extends JFrame {
             infile.close();
         }
         catch(Exception e) {
-                System.out.println("Error");
+                System.out.println("No Data");
         }
     }
 }

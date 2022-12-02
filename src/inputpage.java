@@ -12,7 +12,7 @@ public class inputpage extends JFrame {
         game_over.setBounds(48,10,200,50);
         add(game_over);
 
-        JLabel output_point = new JLabel("YOUR POINT : "+p);
+        JLabel output_point = new JLabel("YOUR SCORE : "+p);
         output_point.setFont(new Font("Serif",Font.BOLD,20));
         output_point.setForeground(Color.WHITE);
         output_point.setBounds(62,50,200,50);
