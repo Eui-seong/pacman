@@ -127,7 +127,7 @@ public class RankPage extends JFrame {
             getTop5[i][1] = "-";
         }
         try {
-            BufferedReader infile = new BufferedReader(new FileReader("/Users/shin-uiseong/Desktop/pacman/rank.csv"));
+            BufferedReader infile = new BufferedReader(new FileReader("./rank.csv"));
             if (infile.ready()) {
                 System.out.println("success");
                 String line;
