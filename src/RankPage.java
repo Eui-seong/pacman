@@ -1,8 +1,12 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class RankPage extends JFrame {
+
+    private String getTop5[][] = new String[5][2];
 
     public RankPage() {
         Container cp = getContentPane();
@@ -19,32 +23,81 @@ public class RankPage extends JFrame {
         JPanel tempRight = new JPanel();
         tempRight.setBackground(Color.BLACK);
         p1.setBackground(Color.BLACK);
-        p1.setLayout(new GridLayout(6, 1));
+        p1.setLayout(new GridLayout(6, 3));
         p1.setBorder(new LineBorder(Color.WHITE));
-        JLabel hue = new JLabel("    Rank                         Score                       Name");
-        JLabel rank1 = new JLabel("     1st");
-        JLabel rank2 = new JLabel("     2nd");
-        JLabel rank3 = new JLabel("     3th");
-        JLabel rank4 = new JLabel("     4th");
-        JLabel rank5 = new JLabel("     5th");
-        hue.setFont(new Font("Helvetica", Font.BOLD, 15));
+        setGetTop5();
+        JLabel hue1 = new JLabel("      Rank");
+        JLabel hue2 = new JLabel("      Score");
+        JLabel hue3 = new JLabel("      Name");
+        JLabel rank1 = new JLabel("         1st");
+        JLabel score1 = new JLabel("         " + getTop5[0][0]);
+        JLabel name1 = new JLabel("        " + getTop5[0][1]);
+        JLabel rank2 = new JLabel("         2nd");
+        JLabel score2 = new JLabel("         " + getTop5[1][0]);
+        JLabel name2 = new JLabel("        " + getTop5[1][1]);
+        JLabel rank3 = new JLabel("         3rd");
+        JLabel score3 = new JLabel("         " + getTop5[2][0]);
+        JLabel name3 = new JLabel("        " + getTop5[2][1]);
+        JLabel rank4 = new JLabel("         4th");
+        JLabel score4 = new JLabel("         " + getTop5[3][0]);
+        JLabel name4 = new JLabel("        " + getTop5[3][1]);
+        JLabel rank5 = new JLabel("         5th");
+        JLabel score5 = new JLabel("         " + getTop5[4][0]);
+        JLabel name5 = new JLabel("        " + getTop5[4][1]);
+        hue1.setFont(new Font("Helvetica", Font.BOLD, 15));
+        hue2.setFont(new Font("Helvetica", Font.BOLD, 15));
+        hue3.setFont(new Font("Helvetica", Font.BOLD, 15));
         rank1.setFont(new Font("Helvetica", Font.BOLD, 12));
+        score1.setFont(new Font("Helvetica", Font.BOLD, 12));
+        name1.setFont(new Font("Helvetica", Font.BOLD, 12));
         rank2.setFont(new Font("Helvetica", Font.BOLD, 12));
+        score2.setFont(new Font("Helvetica", Font.BOLD, 12));
+        name2.setFont(new Font("Helvetica", Font.BOLD, 12));
         rank3.setFont(new Font("Helvetica", Font.BOLD, 12));
+        score3.setFont(new Font("Helvetica", Font.BOLD, 12));
+        name3.setFont(new Font("Helvetica", Font.BOLD, 12));
         rank4.setFont(new Font("Helvetica", Font.BOLD, 12));
+        score4.setFont(new Font("Helvetica", Font.BOLD, 12));
+        name4.setFont(new Font("Helvetica", Font.BOLD, 12));
         rank5.setFont(new Font("Helvetica", Font.BOLD, 12));
-        hue.setForeground(Color.WHITE);
+        score5.setFont(new Font("Helvetica", Font.BOLD, 12));
+        name5.setFont(new Font("Helvetica", Font.BOLD, 12));
+        hue1.setForeground(Color.WHITE);
+        hue2.setForeground(Color.WHITE);
+        hue3.setForeground(Color.WHITE);
         rank1.setForeground(Color.WHITE);
+        score1.setForeground(Color.WHITE);
+        name1.setForeground(Color.WHITE);
         rank2.setForeground(Color.WHITE);
+        score2.setForeground(Color.WHITE);
+        name2.setForeground(Color.WHITE);
         rank3.setForeground(Color.WHITE);
+        score3.setForeground(Color.WHITE);
+        name3.setForeground(Color.WHITE);
         rank4.setForeground(Color.WHITE);
+        score4.setForeground(Color.WHITE);
+        name4.setForeground(Color.WHITE);
         rank5.setForeground(Color.WHITE);
-        p1.add(hue);
+        score5.setForeground(Color.WHITE);
+        name5.setForeground(Color.WHITE);
+        p1.add(hue1);
+        p1.add(hue2);
+        p1.add(hue3);
         p1.add(rank1);
+        p1.add(score1);
+        p1.add(name1);
         p1.add(rank2);
+        p1.add(score2);
+        p1.add(name2);
         p1.add(rank3);
+        p1.add(score3);
+        p1.add(name3);
         p1.add(rank4);
+        p1.add(score4);
+        p1.add(name4);
         p1.add(rank5);
+        p1.add(score5);
+        p1.add(name5);
         JPanel p2 = new JPanel();
         p2.setBackground(Color.BLACK);
         JButton goBackButton = new GoBackButton(this);
@@ -64,5 +117,41 @@ public class RankPage extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+    }
+
+
+    public void setGetTop5() {
+        // 배열 초기화
+        for (int i = 0; i < 5; i++) {
+            getTop5[i][0] = "0";
+            getTop5[i][1] = "-";
+        }
+        try {
+            BufferedReader infile = new BufferedReader(new FileReader("/Users/shin-uiseong/Desktop/pacman/rank.csv"));
+            if (infile.ready()) {
+                System.out.println("success");
+                String line;
+                while ((line = infile.readLine())!= null) {
+                    System.out.println(line);
+                    StringTokenizer t = new StringTokenizer(line, ",");
+                    String s = t.nextToken().trim();
+                    System.out.println(s);
+                    int score = Integer.parseInt(s);
+                    for (int i = 0; i < 5; i++) {
+                        if (score > Integer.parseInt(getTop5[i][0])) {
+                            getTop5[i+1][0] = getTop5[i][0];
+                            getTop5[i+1][1] = getTop5[i][1];
+                            getTop5[i][0] = s;
+                            getTop5[i][1] = t.nextToken();
+                            break;
+                        }
+                    }
+                }
+            }
+            infile.close();
+        }
+        catch(Exception e) {
+                System.out.println("Error");
+        }
     }
 }
