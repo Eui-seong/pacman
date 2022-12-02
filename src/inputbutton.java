@@ -19,6 +19,9 @@ public class inputbutton extends JButton implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         name= text.getText();
+        if(name.equals("")){
+            name="unknown";
+        }
         try {
             FileWriter writer = new FileWriter("rank.csv", true);
             PrintWriter outfile = new PrintWriter(writer);
