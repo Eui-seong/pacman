@@ -131,21 +131,30 @@ public class RankPage extends JFrame {
             if (infile.ready()) {
                 System.out.println("success");
                 String line;
+                int count = 0;
                 while ((line = infile.readLine())!= null) {
                     System.out.println(line);
                     StringTokenizer t = new StringTokenizer(line, ",");
                     String s = t.nextToken().trim();
+                    String n = t.nextToken().trim();
                     System.out.println(s);
                     int score = Integer.parseInt(s);
                     for (int i = 0; i < 5; i++) {
                         if (score > Integer.parseInt(getTop5[i][0])) {
-                            getTop5[i+1][0] = getTop5[i][0];
-                            getTop5[i+1][1] = getTop5[i][1];
+                            for (int j = 4; j > i; j--) {
+                                getTop5[j][0] = getTop5[j-1][0];
+                                getTop5[j][1] = getTop5[j-1][1];
+                            }
                             getTop5[i][0] = s;
-                            getTop5[i][1] = t.nextToken();
+                            getTop5[i][1] = n;
                             break;
                         }
                     }
+                    count++;
+                }
+                for (int i = count; i < 5; i++) {
+                    getTop5[i][0] = "0";
+                    getTop5[i][1] = "-";
                 }
             }
             infile.close();
