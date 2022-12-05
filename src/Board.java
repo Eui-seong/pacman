@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: © 2021, Jan Bodnar
+ * SPDX-FileCopyrightText: © 2022, Eui-seong <tlsdmltjd52@gmail.com>
  * SPDX-License-Identifier: BSD-2-Clause
  * Original Code
  * https://github.com/janbodnar/Java-Pacman-Game
