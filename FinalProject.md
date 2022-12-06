@@ -106,5 +106,8 @@
 
 <h2>결과물</h2>
 	<h3>1. 메인 페이지(시작 페이지) 구현 및 연동</h3>
-	<img width="500" alt="Screenshot 2022-12-06 at 5 20 56 PM" src="https://user-images.githubusercontent.com/98208662/205858087-cdc0b6c2-424d-47e4-93fb-6f9dd8842dd1.png">
-	<img width="500" alt="Screenshot 2022-12-06 at 5 23 24 PM" src="https://user-images.githubusercontent.com/98208662/205858610-d17dc9f5-6cdc-438c-a19d-a9c6dd7acc37.png">
+	<div>
+		<img height = "200" width="290" alt="Screenshot 2022-12-06 at 5 20 56 PM" src="https://user-images.githubusercontent.com/98208662/205858087-cdc0b6c2-424d-47e4-93fb-6f9dd8842dd1.png">
+		<img height = "200" width="290" alt="Screenshot 2022-12-06 at 5 23 24 PM" src="https://user-images.githubusercontent.com/98208662/205858610-d17dc9f5-6cdc-438c-a19d-a9c6dd7acc37.png">
+	</div>
+	
