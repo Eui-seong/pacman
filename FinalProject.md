@@ -101,10 +101,10 @@
 		버튼은 JButton을 상속한 클래스를 이용하여 설계하였다.
 	
 		
-		
+
 		
 
-<h2>결과물</h2>
+<h1>결과물</h1>
 <h3>1. 메인 페이지(시작 페이지) 구현 및 연동</h3>
 StartButton, ExitButton, RankButton 이것들을 담은 AllButton을 MainPage에 배치시켰다.<br>
 메인페이지는 이미지를 이용해 백그라운드를 설정하였고, 다른 요소들은 모두 자바 Swing 패키지의 기능을 사용해 만들었다.<br>
