@@ -28,7 +28,8 @@
 
 		시작 버튼과 나가기 버튼, 순위 버튼을 JButton 으로 만들어서
 		각각의 이미지를 찾아서 버튼에 입혔다.
-		버튼들을 패널에 담고
+		버튼들을 패널에 담고<img width="994" alt="Screenshot 2022-12-06 at 5 22 33 PM" src="https://user-images.githubusercontent.com/98208662/205858425-09654a78-9aba-4c05-8edd-3ba3ddda4826.png">
+
 		메인 페이지 프레임에 메인 페이지 이미지와 패널을 넣어서
 		메인 페이지를 만들었다. 
 
@@ -79,12 +80,15 @@
 		Board() 객체 생성 메소드에서 <Pacman>클래스를 통해 받은 캐릭터 인자에 따라 다른 loadimage_y(), loadimage_b(), loadimage_r() 메소드가 사용된다. 
 		Loadimage() 메소드는 해당 캐릭터의 이미지를 아이콘화 하여 변수에 저장하는 역할을 한다.
 		
+		
 
 	5. 게임 종료 후 사용자 정보 입력 받는 기능 구현 O
 		
 		게임 종료를 확인하는 메소드인 death()에 목숨이 0이 되었을 때 자바 스윙 패키지 기능을 이용해서 사용자 입력을 받아 변수에 지정하도록 설계하였다. 
 		변수에 입력된 사용자 이름과 전역변수로 선언된 점수 변수의 값을 Rank.csv 파일에 점수, 사용자 이름 순으로 입력한다. 
 		FileWriter를 이용하며 append 파라미터를 true로 설정해 파일을 이어서 작성하도록 하였다.
+		
+		+ 추가적으로 사용자 입력 페이지를 다른 페이지들의 디자인과 유사하게 변경하였다. 
 		
 
 	6. 랭킹 페이지 구현 및 시작 페이지와 연동 O
@@ -99,4 +103,8 @@
 		
 		
 		
-	
+
+<h2>결과물</h2>
+	<h3>1. 메인 페이지(시작 페이지) 구현 및 연동</h3>
+	<img width="500" alt="Screenshot 2022-12-06 at 5 20 56 PM" src="https://user-images.githubusercontent.com/98208662/205858087-cdc0b6c2-424d-47e4-93fb-6f9dd8842dd1.png">
+	<img width="500" alt="Screenshot 2022-12-06 at 5 23 24 PM" src="https://user-images.githubusercontent.com/98208662/205858610-d17dc9f5-6cdc-438c-a19d-a9c6dd7acc37.png">
